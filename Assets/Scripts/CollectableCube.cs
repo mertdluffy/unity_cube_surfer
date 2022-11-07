@@ -28,11 +28,10 @@ public class CollectableCube : MonoBehaviour
     private void OnTriggerEnter(Collider other)
     {
         if (other.gameObject.CompareTag("Obstacle")) {
-            collector.decreaseHeight();
-
             transform.parent = null;
             GetComponent<BoxCollider>().enabled = false;
             other.gameObject.GetComponent<BoxCollider>().enabled = false;
+            collector.decreaseHeight();
         }
     }
 
